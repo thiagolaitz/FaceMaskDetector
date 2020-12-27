@@ -1,5 +1,6 @@
-import tensorflow as tf
-import matplotlib.pyplot as plt
+#Thiago Soares Laitz
+#Huang Tzu Jan
+
 import numpy as np
 import cv2
 from tensorflow import keras
@@ -20,7 +21,7 @@ model.add(keras.layers.MaxPooling2D())
 model.add(keras.layers.Flatten())
 model.add(keras.layers.Dense(1,activation="sigmoid"))
 
-#Load weights trained on google Colab
+#Load weights trained on google Colab -- See FaceMaskDetector.ipynb
 checkpoint_path = "cp.ckpt"
 model.load_weights(checkpoint_path)
 
@@ -75,4 +76,3 @@ while True:
     cv2.imshow("Video", img)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
-
